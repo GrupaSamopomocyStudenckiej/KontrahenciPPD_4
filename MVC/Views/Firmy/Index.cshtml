@@ -1,0 +1,91 @@
+﻿@model IEnumerable<MVC.Models.mvcFirmyModel>
+
+@{
+    ViewBag.Title = "Zarządzanie kontrahentami";
+}
+<br />
+<p>
+    <a href="@Url.Action("DodajLubUsun","Firmy")" class="btn btn-default"><i class="fa fa-plus"></i> Dodaj nowego kontrahenta</a>
+</p>
+<table class="table table-striped">
+    <thead class="table-heading">
+        <tr>
+            <th>
+                Nazwa firmy
+            </th>
+            <th>
+                Numer NIP
+            </th>
+            <th>
+                Numer REGON
+            </th>
+            <th>
+                Adres
+            </th>
+            <th>
+                Numer telefonu
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StronaWWW)
+            </th>
+            <th>
+                Numer konta
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NazwaFirmy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Regon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Miasto), @Html.DisplayFor(modelItem => item.Ulica) @Html.DisplayFor(modelItem => item.NrBudynku)/@Html.DisplayFor(modelItem => item.NrLokalu) <br /> @Html.DisplayFor(modelItem => item.KodPocztowy) @Html.DisplayFor(modelItem => item.Poczta) @Html.DisplayFor(modelItem => item.Kraj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NrTelefonu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StronaWWW)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NrKonta)
+            </td>
+            <td>
+                <a href="@Url.Action("DodajLubUsun", "Firmy", new { id = item.IdFirmy})" class="btn btn-default"><i class="fa fa-pencil"></i>  Edytuj</a>
+                <a onclick="Usun(@item.IdFirmy)" class="btn btn-default"><i class="fa fa-trash"></i>  Usuń</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+@section scripts{
+    <script>
+        $(function () {
+            var successMessage = '@TempData["Sukces"]'
+            if (successMessage != '')
+                alertify.success(successMessage);
+        });
+
+        function Usun(id) {
+            alertify.confirm('Usuwanie','Czy na pewno chcesz usunąć tego kontrahenta?',function(){
+                window.location.href  = '@Url.Action("Usun","Firmy")/'+id;
+            },null );
+        }
+    </script>
+}
