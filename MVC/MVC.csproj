@@ -125,10 +125,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FirmyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PracownicyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\mvcFirmyModel.cs" />
+    <Compile Include="Models\PracownicyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ZmienneGlobalne.cs" />
   </ItemGroup>
@@ -187,7 +189,9 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Firmy\Index.cshtml" />
-    <Content Include="Views\Firmy\DodajLubUsun.cshtml" />
+    <Content Include="Views\Firmy\DodajLubEdytuj.cshtml" />
+    <Content Include="Views\Pracownicy\Index.cshtml" />
+    <Content Include="Views\Pracownicy\DodajLubEdytuj.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -14,7 +14,7 @@ namespace KontrahenciPPD_4.Controllers
 {
     public class FirmyController : ApiController
     {
-        private KontrahenciEntities db = new KontrahenciEntities();
+        private readonly KontrahenciEntities db = new KontrahenciEntities();
 
         // GET: api/Firmy
         public IQueryable<Firmy> GetFirmy()

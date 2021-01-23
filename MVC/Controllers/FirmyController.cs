@@ -52,7 +52,7 @@ namespace MVC.Controllers
         public ActionResult Usun(int id)
         {
             HttpResponseMessage response = ZmienneGlobalne.WebApiClient.DeleteAsync("Firmy/"+id.ToString()).Result;
-            TempData["Usunieto"] = "Usunieto kontrahenta";
+            TempData["Sukces"] = "Usunieto kontrahenta";
             return RedirectToAction("Index");
         }
     }

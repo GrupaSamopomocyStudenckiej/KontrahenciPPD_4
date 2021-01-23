@@ -5,7 +5,7 @@
 }
 <br />
 <p>
-    <a href="@Url.Action("DodajLubUsun","Firmy")" class="btn btn-default"><i class="fa fa-plus"></i> Dodaj nowego kontrahenta</a>
+    <a href="@Url.Action("DodajLubEdytuj","Firmy")" class="btn btn-default"><i class="fa fa-plus"></i> Dodaj nowego kontrahenta</a>
 </p>
 <table class="table table-striped">
     <thead class="table-heading">
@@ -66,7 +66,7 @@
                 @Html.DisplayFor(modelItem => item.NrKonta)
             </td>
             <td>
-                <a href="@Url.Action("DodajLubUsun", "Firmy", new { id = item.IdFirmy})" class="btn btn-default"><i class="fa fa-pencil"></i>  Edytuj</a>
+                <a href="@Url.Action("DodajLubEdytuj", "Firmy", new { id = item.IdFirmy})" class="btn btn-default"><i class="fa fa-pencil"></i>  Edytuj</a>
                 <a onclick="Usun(@item.IdFirmy)" class="btn btn-default"><i class="fa fa-trash"></i>  Usuń</a>
             </td>
         </tr>
