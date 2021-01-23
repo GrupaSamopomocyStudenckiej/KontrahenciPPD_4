@@ -19,7 +19,7 @@ namespace MVC.Controllers
             return View(FirmyLista);
         }
 
-        public ActionResult DodajLubUsun(int id = 0)
+        public ActionResult DodajLubEdytuj(int id = 0)
         {
             if (id == 0)
             {
@@ -33,7 +33,7 @@ namespace MVC.Controllers
 
         }
         [HttpPost]
-        public ActionResult DodajLubUsun(mvcFirmyModel firma)
+        public ActionResult DodajLubEdytuj(mvcFirmyModel firma)
         {
             if (firma.IdFirmy == 0)
             {

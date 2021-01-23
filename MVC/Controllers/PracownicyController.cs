@@ -18,7 +18,7 @@ namespace MVC.Controllers
             PracownicyLista = response.Content.ReadAsAsync<IEnumerable<PracownicyModel>>().Result;
             return View(PracownicyLista);
         }
-        public ActionResult DodajLubUsun(int id = 0)
+        public ActionResult DodajLubEdytuj(int id = 0)
         {
             if (id == 0)
             {
@@ -32,7 +32,7 @@ namespace MVC.Controllers
         }
 
         [HttpPost]
-        public ActionResult DodajLubUsun(PracownicyModel pracownik)
+        public ActionResult DodajLubEdytuj(PracownicyModel pracownik)
         {
             if (pracownik.IdPracownika == 0)
             {

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KontrahenciPPD_4.Models
+namespace API.Models
 {
     using System;
     using System.Collections.Generic;

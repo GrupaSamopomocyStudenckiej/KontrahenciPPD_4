@@ -8,9 +8,9 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
-using KontrahenciPPD_4.Models;
+using API.Models;
 
-namespace KontrahenciPPD_4.Controllers
+namespace API.Controllers
 {
     public class FirmyController : ApiController
     {
