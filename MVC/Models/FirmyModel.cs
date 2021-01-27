@@ -6,7 +6,7 @@ using System.Web;
 
 namespace MVC.Models
 {
-    public class mvcFirmyModel
+    public class FirmyModel
     {
         public int IdFirmy { get; set; }
         public int IdSiedzibyFirmy { get; set; }

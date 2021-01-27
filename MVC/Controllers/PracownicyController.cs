@@ -18,6 +18,22 @@ namespace MVC.Controllers
             PracownicyLista = response.Content.ReadAsAsync<IEnumerable<PracownicyModel>>().Result;
             return View(PracownicyLista);
         }
+
+        public ActionResult PracownicyFirmy(int id = 0)
+        {
+            if (id == 0)
+            {
+                return View(new PracownicyModel());
+            }
+            else
+            {
+                IEnumerable<PracownicyModel> PracownicyLista;
+                HttpResponseMessage response = ZmienneGlobalne.WebApiClient.GetAsync("Narzedzia/GetPracownicyFirmy?id=" + id.ToString()).Result;
+                PracownicyLista = response.Content.ReadAsAsync<IEnumerable<PracownicyModel>>().Result;
+                return View(PracownicyLista);
+            }
+        }
+
         public ActionResult DodajLubEdytuj(int id = 0)
         {
             if (id == 0)

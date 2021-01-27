@@ -1,4 +1,4 @@
-﻿@model IEnumerable<MVC.Models.mvcFirmyModel>
+﻿@model IEnumerable<MVC.Models.FirmyModel>
 
 @{
     ViewBag.Title = "Zarządzanie kontrahentami";
@@ -66,6 +66,7 @@
                 @Html.DisplayFor(modelItem => item.NrKonta)
             </td>
             <td>
+                <a href="@Url.Action("PracownicyFirmy", "Pracownicy", new { id = item.IdFirmy})" class="btn btn-default"><i class="fa fa-pencil"></i>  Pracownicy firmy</a>
                 <a href="@Url.Action("DodajLubEdytuj", "Firmy", new { id = item.IdFirmy})" class="btn btn-default"><i class="fa fa-pencil"></i>  Edytuj</a>
                 <a onclick="Usun(@item.IdFirmy)" class="btn btn-default"><i class="fa fa-trash"></i>  Usuń</a>
             </td>

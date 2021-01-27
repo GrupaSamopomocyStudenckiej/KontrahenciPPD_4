@@ -14,7 +14,7 @@ namespace API.Controllers
 {
     public class PracownicyController : ApiController
     {
-        private KontrahenciEntities db = new KontrahenciEntities();
+        private readonly KontrahenciEntities db = new KontrahenciEntities();
 
         // GET: api/Pracownicy
         public IQueryable<Pracownicy> GetPracownicy()
