@@ -66,6 +66,7 @@
                 @Html.DisplayFor(modelItem => item.NrKonta)
             </td>
             <td>
+                <a href="@Url.Action("PracownicyFirmy", "Pracownicy", new { id = item.IdFirmy})" class="btn btn-info size text-center">Pracownicy firmy</a>
                 <a href="@Url.Action("DodajLubEdytuj", "Firmy", new { id = item.IdFirmy})" class="btn btn-info size text-center">Edytuj</a>
                 <a onclick="Usun(@item.IdFirmy)" class="btn btn-danger size text-center">Usuń</a>
             </td>
