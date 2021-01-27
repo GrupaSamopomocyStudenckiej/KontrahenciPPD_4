@@ -7,7 +7,7 @@
 <br />
 
 <p>
-    <a href="@Url.Action("DodajLubEdytuj","Pracownicy")" class="btn btn-default"><i class="fa fa-plus"></i> Dodaj nowego pracownika</a>
+    <a href="@Url.Action("DodajLubEdytuj","Pracownicy")" class="btn btn-info">Dodaj nowego pracownika</a>
 </p>
 <table class="table table-striped">
     <thead class="table-heading">
@@ -44,8 +44,8 @@
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                <a href="@Url.Action("DodajLubEdytuj", "Pracownicy", new { id = item.IdPracownika})" class="btn btn-default"><i class="fa fa-pencil"></i>  Edytuj</a>
-                <a onclick="Usun(@item.IdPracownika)" class="btn btn-default"><i class="fa fa-trash"></i>  Usuń</a>
+                <a href="@Url.Action("DodajLubEdytuj", "Pracownicy", new { id = item.IdPracownika})" class="btn btn-info size">  Edytuj</a>
+                <a onclick="Usun(@item.IdPracownika)" class="btn btn-danger size">Usuń</a>
             </td>
         </tr>
     }
@@ -67,3 +67,17 @@
         }
     </script>
 }
+
+<style>
+    @@media only screen and (max-width: 533px) {
+
+        .size {
+            width: 66px;
+            margin: 2px;
+        }
+    }
+
+    .table > thead > tr > th {
+        border: none;
+    }
+</style>

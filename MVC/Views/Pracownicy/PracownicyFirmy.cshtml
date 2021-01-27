@@ -42,3 +42,32 @@
 
 </table>
 
+@section scripts{
+    <script>
+        $(function () {
+            var successMessage = '@TempData["Sukces"]'
+            if (successMessage != '')
+                alertify.success(successMessage);
+        });
+
+        function Usun(id) {
+            alertify.confirm('Usuwanie','Czy na pewno chcesz usunąć tego pracownika?',function(){
+                window.location.href  = '@Url.Action("Usun", "Pracownicy")/'+id;
+            },null );
+        }
+    </script>
+}
+
+<style>
+    @@media only screen and (max-width: 533px) {
+
+        .size {
+            width: 66px;
+            margin: 2px;
+        }
+    }
+
+    .table > thead > tr > th {
+        border: none;
+    }
+</style>

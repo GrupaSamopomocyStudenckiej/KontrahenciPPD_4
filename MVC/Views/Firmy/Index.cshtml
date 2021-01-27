@@ -5,33 +5,33 @@
 }
 <br />
 <p>
-    <a href="@Url.Action("DodajLubEdytuj","Firmy")" class="btn btn-default"><i class="fa fa-plus"></i> Dodaj nowego kontrahenta</a>
+    <a href="@Url.Action("DodajLubEdytuj","Firmy")" class="btn btn-info">Dodaj nowego kontrahenta</a>
 </p>
 <table class="table table-striped">
     <thead class="table-heading">
         <tr>
-            <th>
+            <th class="text-center">
                 Nazwa firmy
             </th>
-            <th>
+            <th class="text-center">
                 Numer NIP
             </th>
-            <th>
+            <th class="text-center">
                 Numer REGON
             </th>
-            <th>
+            <th class="text-center">
                 Adres
             </th>
-            <th>
+            <th class="text-center">
                 Numer telefonu
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Email)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.StronaWWW)
             </th>
-            <th>
+            <th class="text-center">
                 Numer konta
             </th>
             <th></th>
@@ -40,7 +40,7 @@
 
     @foreach (var item in Model)
     {
-        <tr>
+        <tr class="text-center">
             <td>
                 @Html.DisplayFor(modelItem => item.NazwaFirmy)
             </td>
@@ -66,9 +66,8 @@
                 @Html.DisplayFor(modelItem => item.NrKonta)
             </td>
             <td>
-                <a href="@Url.Action("PracownicyFirmy", "Pracownicy", new { id = item.IdFirmy})" class="btn btn-default"><i class="fa fa-pencil"></i>  Pracownicy firmy</a>
-                <a href="@Url.Action("DodajLubEdytuj", "Firmy", new { id = item.IdFirmy})" class="btn btn-default"><i class="fa fa-pencil"></i>  Edytuj</a>
-                <a onclick="Usun(@item.IdFirmy)" class="btn btn-default"><i class="fa fa-trash"></i>  Usuń</a>
+                <a href="@Url.Action("DodajLubEdytuj", "Firmy", new { id = item.IdFirmy})" class="btn btn-info size text-center">Edytuj</a>
+                <a onclick="Usun(@item.IdFirmy)" class="btn btn-danger size text-center">Usuń</a>
             </td>
         </tr>
     }
@@ -76,7 +75,10 @@
 </table>
 
 @section scripts{
+
     <script>
+
+
         $(function () {
             var successMessage = '@TempData["Sukces"]'
             if (successMessage != '')
@@ -90,3 +92,14 @@
         }
     </script>
 }
+
+<style>
+    .size {
+        width: 66px;
+        margin: 2px;
+    }
+
+    .table > thead > tr > th {
+        border: none;
+    }
+</style>
