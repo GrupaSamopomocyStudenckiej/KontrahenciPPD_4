@@ -1,28 +1,31 @@
 ﻿@model IEnumerable<MVC.Models.PracownicyModel>
 
-@{
-    ViewBag.Title = "Zarządzanie pracownikami";
-}
+@{ ViewBag.Title = "Zarządzanie pracownikami"; }
 
+<link rel="stylesheet" href="~/Content/Stylings/pracownicy.css" />
+<link rel="stylesheet" href="~/Content/Stylings/buttons.css" />
 <br />
 
 <p>
-    <a href="@Url.Action("DodajLubEdytuj","Pracownicy")" class="btn btn-info">Dodaj nowego pracownika</a>
+    <a href="@Url.Action("DodajLubEdytuj","Pracownicy")" class="btn btn-add">Dodaj nowego pracownika</a>
 </p>
-<table class="table table-striped">
-    <thead class="table-heading">
+<table class="center">
+    <thead>
         <tr>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Imie)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Nazwisko)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.NrTelefonu)
             </th>
-            <th>
+            <th class="text-center">
                 @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th class="text-center">
+                Opcje
             </th>
         </tr>
     </thead>
@@ -31,21 +34,21 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.Imie)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.Nazwisko)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.NrTelefonu)
             </td>
-            <td>
+            <td class="text-center">
                 @Html.DisplayFor(modelItem => item.Email)
             </td>
-            <td>
-                <a href="@Url.Action("DodajLubEdytuj", "Pracownicy", new { id = item.IdPracownika})" class="btn btn-info size">  Edytuj</a>
-                <a onclick="Usun(@item.IdPracownika)" class="btn btn-danger size">Usuń</a>
+            <td class="text-center">
+                <a href="@Url.Action("DodajLubEdytuj", "Pracownicy", new { id = item.IdPracownika})" class="btn btn-green size">  Edytuj</a>
+                <a onclick="Usun(@item.IdPracownika)" class="btn btn-delete size">Usuń</a>
             </td>
         </tr>
     }
@@ -54,6 +57,7 @@
 
 @section scripts{
     <script>
+
         $(function () {
             var successMessage = '@TempData["Sukces"]'
             if (successMessage != '')
@@ -67,17 +71,3 @@
         }
     </script>
 }
-
-<style>
-    @@media only screen and (max-width: 533px) {
-
-        .size {
-            width: 66px;
-            margin: 2px;
-        }
-    }
-
-    .table > thead > tr > th {
-        border: none;
-    }
-</style>

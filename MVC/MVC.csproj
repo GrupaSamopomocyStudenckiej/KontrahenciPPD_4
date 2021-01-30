@@ -155,6 +155,11 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Stylings\buttons.css" />
+    <Content Include="Content\Stylings\firmyform.css" />
+    <Content Include="Content\Stylings\kontrahenci.css" />
+    <Content Include="Content\Stylings\pracownicy.css" />
+    <Content Include="Content\Stylings\pracownicyeditform.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

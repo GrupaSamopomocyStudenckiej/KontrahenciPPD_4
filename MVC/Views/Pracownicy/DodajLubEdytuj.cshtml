@@ -3,6 +3,9 @@
     ViewBag.Title = "Dodaj lub edytuj pracownika";
 }
 
+<link href="~/Content/Stylings/pracownicyeditform.css" rel="stylesheet" />
+<link href="~/Content/Stylings/buttons.css" rel="stylesheet" />
+
 <div class="form-body" id="signupform">
     @using (Html.BeginForm())
     {
@@ -45,9 +48,9 @@
                 @Html.ValidationMessageFor(model => model.Email)
             </div>
         </div>
-        <div class="buttons">
-            <input type="submit" value="Zapisz" class="btn btn-info" />
-            <input type="reset" value="Resetuj" class="btn btn-danger" />
+        <div>
+            <input type="submit" value="Zapisz" class="btn btn-green buttons" />
+            <input type="reset" value="Resetuj" class="btn btn-delete buttons" />
         </div>
     }
 </div>
@@ -57,26 +60,3 @@
     @Scripts.Render("~/bundles/jqueryval");
 
 }
-
-<style>
-    .form-body {
-        margin-top: 10px;
-    }
-
-    .form-group {
-        margin: 5px 0 0 0;
-    }
-
-    span {
-        margin-left: 3px;
-    }
-
-    .buttons {
-        margin-top: 10px;
-    }
-
-    .btn:focus, .btn:active {
-        outline: none !important;
-        box-shadow: none;
-    }
-</style>

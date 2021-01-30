@@ -4,6 +4,9 @@
     ViewBag.Title = "Dodaj lub edytuj kontrahenta";
 }
 
+<link href="~/Content/Stylings/firmyform.css" rel="stylesheet" />
+<link href="~/Content/Stylings/buttons.css" rel="stylesheet" />
+
 <div class="form-body">
     @using (Html.BeginForm())
     {
@@ -108,9 +111,9 @@
                 @Html.ValidationMessageFor(model => model.NrKonta)
             </div>
         </div>
-        <div class="buttons">
-            <input type="submit" value="Zapisz" class="btn btn-info" />
-            <input type="reset" value="Resetuj" class="btn btn-danger" />
+        <div>
+            <input type="submit" value="Zapisz" class="btn btn-green buttons" />
+            <input type="reset" value="Resetuj" class="btn btn-delete buttons" />
         </div>
     }
 </div>
@@ -120,16 +123,3 @@
     @Scripts.Render("~/bundles/jqueryval");
 }
 
-<style>
-    .form-body {
-        margin-top: 10px;
-    }
-
-    .form-group {
-        margin: 5px 0 0 0;
-    }
-
-    .buttons {
-        margin-top: 10px;
-    }
-</style>
