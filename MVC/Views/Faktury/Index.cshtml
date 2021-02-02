@@ -4,44 +4,49 @@
     ViewBag.Title = "Index";
 }
 
-<table class="table">
-    <tr>
-        <th>
-            Ilośc zapłaconych faktur
-        </th>
-        <th>
-            Ilość niezapłaconych faktur
-        </th>
-        <th>
-            Wartość zapłaconych faktur
-        </th>
-        <th>
-            Wartość niezapłaconych faktur
-        </th>
-        <th>
-            Saldo
-        </th>
-        <th></th>
-    </tr>
+<link href="~/Content/Stylings/faktury.css" rel="stylesheet" />
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.IloscZaplacone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IloscNieZaplacone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WartoscZaplacone) zł
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WartoscNieZaplacone) zł
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.SaldoOstateczne) zł
-        </td>
-    </tr>
-}
+<table class="center">
+    <thead>
+        <tr>
+            <th class="text-center">
+                Ilośc zapłaconych faktur
+            </th>
+            <th class="text-center">
+                Ilość niezapłaconych faktur
+            </th>
+            <th class="text-center">
+                Wartość zapłaconych faktur
+            </th>
+            <th class="text-center">
+                Wartość niezapłaconych faktur
+            </th>
+            <th class="text-center">
+                Saldo
+            </th>
+        </tr>
+    </thead>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.IloscZaplacone)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.IloscNieZaplacone)
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.WartoscZaplacone) zł
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.WartoscNieZaplacone) zł
+            </td>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.SaldoOstateczne) zł
+            </td>
+        </tr>
+    }
 
 </table>

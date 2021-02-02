@@ -21,14 +21,55 @@ th {
     padding-top: 3px;
 }
 
-td,
-th {
+.margin-all {
+    margin: 5px;
+}
+
+td, th {
     padding: 6px;
     border: 1px solid #ccc;
     text-align: left;
 }
 
+label {
+    margin: 1px 0 1px 0;
+}
+
+.center {
+    margin: 0 auto;
+}
+
 @media only screen and (max-width: 1200px), (min-device-width: 768px) and (max-device-width: 1024px) {
+    .mobile {
+        display: grid;
+    }
+
+        .mobile input {
+            width: 150px;
+            margin: 0 auto;
+        }
+
+        .mobile button {
+            margin-top: 5px;
+        }
+}
+
+.table-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div a {
+    resize: none;
+}
+
+@media only screen and (max-width: 1482px) and (min-width: 1227px) {
+    .resize {
+        width: 200px;
+    }
+}
+
+@media only screen and (max-width: 1226px), (min-device-width: 768px) and (max-device-width: 1024px) {
     table, thead, tbody, th, td, tr {
         display: block;
     }
@@ -99,12 +140,12 @@ th {
 
     td:nth-of-type(9):before {
         content: "Opcje";
-        margin-top: 10px;
+        margin-top: 27px;
     }
 
     td:nth-of-type(10):before {
-        content: "Faktury"
-        margin-top: 10px;
+        content: "Faktury";
+        margin-top: 57px;
     }
 
     .input-end {

@@ -9,7 +9,7 @@
 <p>
     <a href="@Url.Action("DodajLubEdytuj","Firmy")" class="btn btn-add">Dodaj nowego kontrahenta</a>
 </p>
-<table>
+<table class="table-center">
     <thead>
         <tr>
             <th class="text-center">
@@ -68,24 +68,36 @@
                 <td class="text-center">
                     @Html.DisplayFor(modelItem => item.NrKonta)
                 </td>
-                <td class="text-center">
-                    <a href="@Url.Action("PracownicyFirmy", "Pracownicy", new { id = item.IdFirmy})" class="btn btn-employee display">Pracownicy firmy</a>
-                    <a href="@Url.Action("DodajLubEdytuj", "Firmy", new { id = item.IdFirmy})" class="btn btn-green size text-center display">Edytuj</a>
-                    <a onclick="Usun(@item.IdFirmy)" class="btn btn-delete size text-center display">Usuń</a>
+                <td class="text-center resize">
+                    <a href="@Url.Action("PracownicyFirmy", "Pracownicy", new { id = item.IdFirmy})" class="btn btn-employee display center">Pracownicy firmy</a>
+                    <div>
+                        <a href="@Url.Action("DodajLubEdytuj", "Firmy", new { id = item.IdFirmy})" class="btn btn-green size text-center display f-left">Edytuj</a>
+                        <a onclick="Usun(@item.IdFirmy)" class="btn btn-delete size text-center display f-left">Usuń</a>
+                    </div>
                 </td>
-                <td class="text-center">
+                <td class="text-center mobile">
 
+                    <div>
                         <label for="start">Data początku</label>
-                        <input type="date" id="start" name="start" />
+                        <div>
+                            <input type="date" id="start" name="start"
+                                   class="margin-all" />
+                        </div>
+                    </div>
 
+                    <div>
                         <label for="end">Data końca</label>
-                        <input type="date" id="end" name="end" />
+                        <div>
+                            <input type="date" id="end" name="end"
+                                   class="margin-all" />
+                        </div>
+                    </div>
 
-                    <button onclick="FakturySaldo(@Html.DisplayFor(modelItem => item.Nip))" class="btn btn-green text-center margin">Saldo</button>
+                    <button onclick="FakturySaldo(@Html.DisplayFor(modelItem => item.Nip))" class="btn btn-green text-center center">Saldo</button>
                 </td>
             </tr>
         }
-        </tbody>
+    </tbody>
 </table>
 
 @section scripts{
