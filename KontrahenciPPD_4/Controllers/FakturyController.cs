@@ -10,6 +10,7 @@ using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Web.Http;
+using System.Web.Http.Description;
 using System.Web.Mvc;
 
 namespace API.Controllers
@@ -17,6 +18,7 @@ namespace API.Controllers
     public class FakturyController : ApiController
     {
         //https://localhost:44306/api/Faktury?NIP=13221&Data_od=121212&Data_do=12121
+        [ResponseType(typeof(FakturyOut))]
         public HttpResponseMessage GetSaldoFaktur(string NIP, string Data_od, string Data_do)
         {
             HttpWebRequest OdpytanieAPI = (HttpWebRequest)WebRequest.Create("https://api.mocki.io/v1/248c570e");
@@ -52,6 +54,7 @@ namespace API.Controllers
             var res = Request.CreateResponse(HttpStatusCode.OK);
             res.Content = new StringContent(JsonConvert.SerializeObject(fakturyOut), Encoding.UTF8, "application/json");
             return res;
+           // return Ok(fakturyOut);
         }
     }
 }

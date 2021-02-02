@@ -123,12 +123,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FakturyController.cs" />
     <Compile Include="Controllers\FirmyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PracownicyController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FakturyModel.cs" />
     <Compile Include="Models\FirmyModel.cs" />
     <Compile Include="Models\PracownicyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -198,6 +200,7 @@
     <Content Include="Views\Pracownicy\Index.cshtml" />
     <Content Include="Views\Pracownicy\DodajLubEdytuj.cshtml" />
     <Content Include="Views\Pracownicy\PracownicyFirmy.cshtml" />
+    <Content Include="Views\Faktury\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

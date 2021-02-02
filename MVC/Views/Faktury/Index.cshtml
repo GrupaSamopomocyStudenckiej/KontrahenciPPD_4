@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MVC.Models.FakturyOut>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Ilośc zapłaconych faktur
+        </th>
+        <th>
+            Ilość niezapłaconych faktur
+        </th>
+        <th>
+            Wartość zapłaconych faktur
+        </th>
+        <th>
+            Wartość niezapłaconych faktur
+        </th>
+        <th>
+            Saldo
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IloscZaplacone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IloscNieZaplacone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WartoscZaplacone) zł
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WartoscNieZaplacone) zł
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SaldoOstateczne) zł
+        </td>
+    </tr>
+}
+
+</table>

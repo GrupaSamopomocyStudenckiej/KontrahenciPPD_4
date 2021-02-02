@@ -17,6 +17,10 @@ th {
     font-weight: bold;
 }
 
+.margin {
+    padding-top: 3px;
+}
+
 td,
 th {
     padding: 6px;
@@ -96,6 +100,15 @@ th {
     td:nth-of-type(9):before {
         content: "Opcje";
         margin-top: 10px;
+    }
+
+    td:nth-of-type(10):before {
+        content: "Faktury"
+        margin-top: 10px;
+    }
+
+    .input-end {
+        margin-left: 3px;
     }
 }
 

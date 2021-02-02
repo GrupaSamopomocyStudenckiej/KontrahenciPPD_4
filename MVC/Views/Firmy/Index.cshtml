@@ -37,6 +37,7 @@
                 Numer konta
             </th>
             <th class="text-center">Opcje</th>
+            <th class="text-center">Faktury</th>
         </tr>
     </thead>
     <tbody>
@@ -72,6 +73,16 @@
                     <a href="@Url.Action("DodajLubEdytuj", "Firmy", new { id = item.IdFirmy})" class="btn btn-green size text-center display">Edytuj</a>
                     <a onclick="Usun(@item.IdFirmy)" class="btn btn-delete size text-center display">Usuń</a>
                 </td>
+                <td class="text-center">
+
+                        <label for="start">Data początku</label>
+                        <input type="date" id="start" name="start" />
+
+                        <label for="end">Data końca</label>
+                        <input type="date" id="end" name="end" />
+
+                    <button onclick="FakturySaldo(@Html.DisplayFor(modelItem => item.Nip))" class="btn btn-green text-center margin">Saldo</button>
+                </td>
             </tr>
         }
         </tbody>
@@ -93,5 +104,19 @@
                 window.location.href  = '@Url.Action("Usun","Firmy")/'+id;
             },null );
         }
+
+        function FakturySaldo(nip) {
+            const data_od = document.getElementById("start").value;
+            const data_do = document.getElementById("end").value;
+            const NIP = nip;
+
+            location.href = '@Url.Action("Index", "Faktury")?NIP=' + NIP + '&Data_od=' + data_od + '&Data_do=' + data_do;
+
+
+          //  window.location.href = @Url.Action("Index", "Faktury", new { nip = "<NIP>" });
+
+
+        }
     </script>
 }
+
