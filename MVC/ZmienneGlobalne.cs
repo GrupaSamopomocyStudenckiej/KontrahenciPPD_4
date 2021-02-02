@@ -10,11 +10,13 @@ namespace MVC
     public static class ZmienneGlobalne
     {
         public static HttpClient WebApiClient = new HttpClient();
-    static ZmienneGlobalne()
-    {
-        WebApiClient.BaseAddress = new Uri("https://localhost:44306/api/Firmy");
-        WebApiClient.DefaultRequestHeaders.Clear();
-        WebApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
+
+        static ZmienneGlobalne()
+        {
+            WebApiClient.BaseAddress = new Uri("https://localhost:44306/api/Firmy");
+            WebApiClient.DefaultRequestHeaders.Clear();
+            WebApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("appication/json"));
+        }
     }
-}
+
 }

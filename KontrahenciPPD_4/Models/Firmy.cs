@@ -11,7 +11,8 @@ namespace API.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Linq;
+
     public partial class Firmy
     {
         public int IdFirmy { get; set; }
@@ -29,6 +30,10 @@ namespace API.Models
         public string Kraj { get; set; }
         public string Email { get; set; }
         public string StronaWWW { get; set; }
-        public string NrKonta { get; set; }
+        public string NrKonta { get; set; } 
     }
+
+
+
+
 }
